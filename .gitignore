@@ -1,2 +1,6 @@
 .idea/
 node_modules/
+dist/
+
+.firebaserc
+firebase-debug.log
