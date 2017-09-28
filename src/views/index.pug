@@ -1,0 +1,76 @@
+html
+  head
+    meta(charset="UTF-8")
+    title PWA Challenge
+    style(type="text/css").
+      html {
+        background: #F9FBE7;
+      }
+      #app-loader {
+
+      }
+      #app {
+        visibility: hidden;
+      }
+
+      #app-startup svg {
+        -webkit-animation: rotate 2s linear infinite;
+        animation: rotate 2s linear infinite;
+        z-index: 2;
+      }
+
+      #app-startup svg circle {
+        stroke: hsla(66, 70%, 10%, .25);
+        stroke-linecap: round;
+        -webkit-animation: dash 1.5s ease-in-out infinite;
+        animation: dash 1.5s ease-in-out infinite;
+      }
+
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @-webkit-keyframes rotate {
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes dash {
+        0% {
+          stroke-dasharray: 0em, 4em;
+          stroke-dashoffset: 0;
+        }
+        50% {
+          stroke-dasharray: 4em, 0em;
+          stroke-dashoffset: -35;
+        }
+        100% {
+          stroke-dasharray: 0em, 4em;
+          stroke-dashoffset: -124;
+        }
+      }
+
+      @-webkit-keyframes dash {
+        0% {
+          stroke-dasharray: 0em, 4em;
+          stroke-dashoffset: 0;
+        }
+        50% {
+          stroke-dasharray: 4em, 0em;
+          stroke-dashoffset: -35;
+        }
+        100% {
+          stroke-dasharray: 0em, 4em;
+          stroke-dashoffset: -124;
+        }
+      }
+  body
+    #app-startup
+      svg(width="50", height="50", viewBox="0 0 44 44")
+        circle(cx="22", cy="22", r="20", fill="none", stroke-width="4")
+    #app
+      h1 Hello World :)
+      p Bye World :(
